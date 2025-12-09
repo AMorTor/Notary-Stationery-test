@@ -45,57 +45,57 @@ import { Component, signal } from '@angular/core';
         </h2>
         
         <!-- Metrics Grid (Custom Layouts) -->
-        <div class="flex flex-col gap-12 mt-16 max-w-5xl mx-auto px-4">
+        <div class="flex flex-col gap-12 mt-16 max-w-5xl 2xl:max-w-7xl 2xl:gap-24 mx-auto px-4 box-content">
             
             <!-- Card 1: Years of Experience (Left) -->
-            <div class="relative w-[90%] md:w-3/4 lg:w-4/5 rounded-[29px] p-[3px] bg-gradient-to-r from-blue-500 via-violet-500 to-blue-500 group self-start">
-              <div class="bg-slate-900 backdrop-blur-md rounded-[26px] p-6 py-8 md:p-16 md:py-32 min-h-[180px] md:min-h-[420px] h-full flex flex-row items-center justify-between gap-3 md:gap-12 relative overflow-hidden group-hover:bg-slate-800 transition-colors bg-cover">
+            <div class="relative w-[90%] md:w-3/4 lg:w-4/5 2xl:w-[90%] rounded-[29px] p-[3px] bg-gradient-to-r from-blue-500 via-violet-500 to-blue-500 group self-start">
+              <div class="bg-slate-900 backdrop-blur-md rounded-[26px] p-6 py-8 md:p-16 md:py-32 2xl:p-24 2xl:py-48 min-h-[180px] md:min-h-[420px] 2xl:min-h-[600px] h-full flex flex-row items-center justify-between gap-3 md:gap-12 relative overflow-hidden group-hover:bg-slate-800 transition-colors bg-cover">
                  <!-- Glow Effect -->
                  <div class="absolute inset-0 bg-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                  <!-- Number -->
-                 <div class="relative z-10 text-5xl sm:text-8xl md:text-9xl font-black text-white shrink-0 tracking-tighter order-1 font-comfortaa w-[40%] text-left -ml-4 md:-ml-8">
+                 <div class="relative z-10 text-5xl sm:text-8xl md:text-9xl 2xl:text-[14rem] font-black text-white shrink-0 tracking-tighter order-1 font-comfortaa w-[40%] text-left -ml-4 md:-ml-8">
                    +12
                  </div>
 
                  <!-- Label -->
-                 <div class="relative z-10 text-white font-bold text-sm sm:text-4xl md:text-4xl uppercase tracking-widest leading-tight text-left order-2 w-[60%]">
+                 <div class="relative z-10 text-white font-bold text-sm sm:text-4xl md:text-4xl 2xl:text-6xl uppercase tracking-widest leading-tight text-left order-2 w-[60%]">
                    AÑOS DE EXPERIENCIA
                  </div>
               </div>
             </div>
 
             <!-- Card 2: Coverage (Right) - Text Heavy -->
-            <div class="relative w-[90%] md:w-3/4 lg:w-4/5 rounded-[29px] p-[3px] bg-gradient-to-r from-blue-500 via-violet-500 to-blue-500 group self-end">
-              <div class="bg-slate-900 backdrop-blur-md rounded-[26px] p-6 py-8 md:p-16 md:py-32 min-h-[180px] md:min-h-[420px] h-full flex flex-col items-center justify-between gap-3 md:gap-12 relative overflow-hidden group-hover:bg-slate-800 transition-colors bg-cover">
+            <div class="relative w-[90%] md:w-3/4 lg:w-4/5 2xl:w-[90%] rounded-[29px] p-[3px] bg-gradient-to-r from-blue-500 via-violet-500 to-blue-500 group self-end">
+              <div class="bg-slate-900 backdrop-blur-md rounded-[26px] p-6 py-8 md:p-16 md:py-32 2xl:p-24 2xl:py-48 min-h-[180px] md:min-h-[420px] 2xl:min-h-[600px] h-full flex flex-col items-center justify-between gap-3 md:gap-12 relative overflow-hidden group-hover:bg-slate-800 transition-colors bg-cover">
                  <!-- Glow Effect -->
                  <div class="absolute inset-0 bg-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                  <!-- Number/Main Text (Swapped Order for visual balance) -->
-                 <div class="relative z-10 text-2xl sm:text-5xl md:text-6xl font-black text-white shrink-0 tracking-tighter order-2 font-poppins max-w-lg text-center leading-tight">
+                 <div class="relative z-10 text-2xl sm:text-5xl md:text-6xl 2xl:text-8xl font-black text-white shrink-0 tracking-tighter order-2 font-poppins max-w-lg 2xl:max-w-3xl text-center leading-tight">
                    Toda la república mexicana
                  </div>
 
                  <!-- Label -->
-                 <div class="relative z-10 text-blue-200/80 font-medium text-sm sm:text-xl md:text-2xl uppercase tracking-widest flex-grow leading-tight text-center order-1">
+                 <div class="relative z-10 text-blue-200/80 font-medium text-sm sm:text-xl md:text-2xl 2xl:text-4xl uppercase tracking-widest flex-grow leading-tight text-center order-1">
                    Trabajamos con notarias de
                  </div>
               </div>
             </div>
 
             <!-- Card 3: Notaries Count (Left) -->
-            <div class="relative w-[90%] md:w-3/4 lg:w-4/5 rounded-[29px] p-[3px] bg-gradient-to-r from-blue-500 via-violet-500 to-blue-500 group self-start">
-              <div class="bg-slate-900 backdrop-blur-md rounded-[26px] p-6 py-8 md:p-16 md:py-32 min-h-[180px] md:min-h-[420px] h-full flex flex-col items-center justify-between gap-3 md:gap-12 relative overflow-hidden group-hover:bg-slate-800 transition-colors bg-cover">
+            <div class="relative w-[90%] md:w-3/4 lg:w-4/5 2xl:w-[90%] rounded-[29px] p-[3px] bg-gradient-to-r from-blue-500 via-violet-500 to-blue-500 group self-start">
+              <div class="bg-slate-900 backdrop-blur-md rounded-[26px] p-6 py-8 md:p-16 md:py-32 2xl:p-24 2xl:py-48 min-h-[180px] md:min-h-[420px] 2xl:min-h-[600px] h-full flex flex-col items-center justify-between gap-3 md:gap-12 relative overflow-hidden group-hover:bg-slate-800 transition-colors bg-cover">
                  <!-- Glow Effect -->
                  <div class="absolute inset-0 bg-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                  <!-- Number -->
-                 <div class="relative z-10 text-5xl sm:text-7xl md:text-8xl font-black text-white shrink-0 tracking-tighter order-1 font-comfortaa">
+                 <div class="relative z-10 text-5xl sm:text-7xl md:text-8xl 2xl:text-[10rem] font-black text-white shrink-0 tracking-tighter order-1 font-comfortaa">
                    +35 Notarias
                  </div>
 
                  <!-- Label -->
-                 <div class="relative z-10 text-blue-200/80 font-medium text-base sm:text-3xl md:text-2xl uppercase tracking-widest flex-grow leading-tight text-center order-2">
+                 <div class="relative z-10 text-blue-200/80 font-medium text-base sm:text-3xl md:text-2xl 2xl:text-4xl uppercase tracking-widest flex-grow leading-tight text-center order-2">
                    han confiado en nosotros
                  </div>
               </div>
@@ -105,31 +105,57 @@ import { Component, signal } from '@angular/core';
       </div>
 
        <!-- Infinite Logo Wall -->
-       <div class="space-y-12 marquee-container mt-24 py-12 md:py-20 relative">
+       <div class="space-y-12 marquee-container mt-24 py-12 md:py-20 relative overflow-hidden">
          <!-- Gradient Fade Masks -->
          <div class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-slate-950 to-transparent z-10"></div>
          <div class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-slate-950 to-transparent z-10"></div>
 
-         <!-- Row 1: Left -->
-         <div class="flex gap-16 md:gap-32 w-max animate-scroll-left hover:[animation-play-state:paused] items-center">
-           @for (i of [1, 2, 3, 4]; track i) {
-             <div class="flex gap-16 md:gap-32 items-center">
-               @for (logo of logos(); track logo) {
-                 <img [src]="logo" alt="Partner Logo" class="h-24 md:h-40 w-auto object-contain opacity-40 hover:opacity-100 transition-opacity duration-300">
+         <!-- Row 1: Left (Seamless Loop with Double Container) -->
+         <div class="flex select-none gap-0 w-max">
+             <!-- Track 1 -->
+             <div class="flex gap-16 md:gap-32 w-max animate-scroll-left hover:[animation-play-state:paused] items-center shrink-0 pr-16 md:pr-32">
+               @for (i of [1, 2, 3, 4]; track i) {
+                 <div class="flex gap-16 md:gap-32 items-center">
+                   @for (logo of logos(); track logo) {
+                     <img [src]="logo" alt="Partner Logo" class="h-24 md:h-40 2xl:h-64 w-auto object-contain opacity-40 hover:opacity-100 transition-opacity duration-300">
+                   }
+                 </div>
                }
              </div>
-           }
+             <!-- Track 2 (Duplicate) -->
+             <div class="flex gap-16 md:gap-32 w-max animate-scroll-left hover:[animation-play-state:paused] items-center shrink-0 pr-16 md:pr-32" aria-hidden="true">
+               @for (i of [1, 2, 3, 4]; track i) {
+                 <div class="flex gap-16 md:gap-32 items-center">
+                   @for (logo of logos(); track logo) {
+                     <img [src]="logo" alt="Partner Logo" class="h-24 md:h-40 2xl:h-64 w-auto object-contain opacity-40 hover:opacity-100 transition-opacity duration-300">
+                   }
+                 </div>
+               }
+             </div>
          </div>
 
-         <!-- Row 2: Right -->
-         <div class="flex gap-16 md:gap-32 w-max animate-scroll-right hover:[animation-play-state:paused] items-center">
-           @for (i of [1, 2, 3, 4]; track i) {
-             <div class="flex gap-16 md:gap-32 items-center">
-                @for (logo of logos(); track logo) {
-                 <img [src]="logo" alt="Partner Logo" class="h-24 md:h-40 w-auto object-contain opacity-40 hover:opacity-100 transition-opacity duration-300">
+         <!-- Row 2: Right (Seamless Loop with Double Container) -->
+         <div class="flex select-none gap-0 w-max">
+             <!-- Track 1 -->
+             <div class="flex gap-16 md:gap-32 w-max animate-scroll-right hover:[animation-play-state:paused] items-center shrink-0 pr-16 md:pr-32">
+               @for (i of [1, 2, 3, 4]; track i) {
+                 <div class="flex gap-16 md:gap-32 items-center">
+                    @for (logo of logos(); track logo) {
+                     <img [src]="logo" alt="Partner Logo" class="h-24 md:h-40 2xl:h-64 w-auto object-contain opacity-40 hover:opacity-100 transition-opacity duration-300">
+                   }
+                 </div>
                }
              </div>
-           }
+             <!-- Track 2 (Duplicate) -->
+             <div class="flex gap-16 md:gap-32 w-max animate-scroll-right hover:[animation-play-state:paused] items-center shrink-0 pr-16 md:pr-32" aria-hidden="true">
+               @for (i of [1, 2, 3, 4]; track i) {
+                 <div class="flex gap-16 md:gap-32 items-center">
+                    @for (logo of logos(); track logo) {
+                     <img [src]="logo" alt="Partner Logo" class="h-24 md:h-40 2xl:h-64 w-auto object-contain opacity-40 hover:opacity-100 transition-opacity duration-300">
+                   }
+                 </div>
+               }
+             </div>
          </div>
        </div>
     </section>

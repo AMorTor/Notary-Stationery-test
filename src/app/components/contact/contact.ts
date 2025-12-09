@@ -40,7 +40,10 @@ import { Component } from '@angular/core';
         <!-- Location Map -->
         <div class="w-full md:w-1/2 h-[500px] rounded-[28px] overflow-hidden border border-white/10 relative">
           <div class="absolute inset-0 bg-slate-900 flex items-center justify-center">
-            <p class="text-slate-500">Google Maps Embed Placeholder</p>
+            
+
+
+          
           </div>
           <!-- Overlay gradient for better integration -->
           <div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-slate-950/50 to-transparent"></div>
