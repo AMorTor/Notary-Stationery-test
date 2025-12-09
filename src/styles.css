@@ -1,3 +1,86 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Comfortaa:wght@300;400;700&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-poppins: 'Poppins', sans-serif;
+  --font-comfortaa: 'Comfortaa', cursive;
+}
+
+@theme {
+  /* Dark Luxury Palette */
+  --color-slate-950: #020617;
+  --color-violet-950: #2e1065;
+  --color-gold-400: #fbbf24;
+  --color-gold-500: #f59e0b;
+  --color-gold-600: #d97706;
+
+  /* Material 3 Radius */
+  --radius-xl: 28px;
+
+  /* Animations */
+  --animate-scroll-left: scroll-left 80s linear infinite;
+  --animate-scroll-right: scroll-right 80s linear infinite;
+  --animate-breathe: breathe 4s ease-in-out infinite;
+
+  @keyframes scroll-left {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes scroll-right {
+    from {
+      transform: translateX(-100%);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes breathe {
+
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.9;
+    }
+
+    50% {
+      transform: scale(1.02);
+      opacity: 1;
+    }
+  }
+}
+
+/* Global Styles */
+body {
+  background-color: var(--color-slate-950);
+  background-image: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #020617 60%);
+  color: white;
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Utilities for Marquee */
+.marquee-container {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* Section Separator */
+.section-divider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 10;
+}

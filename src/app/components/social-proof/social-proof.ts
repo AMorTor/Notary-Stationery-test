@@ -1,0 +1,151 @@
+import { Component, signal } from '@angular/core';
+
+@Component({
+  selector: 'app-social-proof',
+  standalone: true,
+  template: `
+    <section class="py-24 relative overflow-hidden -mt-24 z-20">
+      <!-- Curved Glowing Header (Replaces CSS Gradient to avoid straight lines) -->
+      <div class="absolute top-0 left-0 w-full h-[400px] leading-[0] z-0 pointer-events-none">
+          <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" preserveAspectRatio="none">
+              <defs>
+                  <!-- Blue Glow Gradient -->
+                  <linearGradient id="socialProofBlueFill" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="rgba(59, 130, 246, 0.4)" />
+                      <stop offset="50%" stop-color="rgba(59, 130, 246, 0.1)" />
+                      <stop offset="100%" stop-color="transparent" />
+                  </linearGradient>
+                  <!-- Horizon Stroke Gradient -->
+                  <linearGradient id="socialProofBlueStroke" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="transparent" />
+                      <stop offset="20%" stop-color="rgba(59, 130, 246, 0.6)" />
+                      <stop offset="50%" stop-color="rgba(59, 130, 246, 1)" />
+                      <stop offset="80%" stop-color="rgba(59, 130, 246, 0.6)" />
+                      <stop offset="100%" stop-color="transparent" />
+                  </linearGradient>
+              </defs>
+              
+              <!-- Filled Glow Area (Convex Hill) -->
+              <!-- Solid Base to mask Hero straight line -->
+              <path d="M0,60 Q600,0 1200,60 V400 H0 Z" fill="#020617"></path>
+              <!-- Gradient Overlay -->
+              <path d="M0,60 Q600,0 1200,60 V400 H0 Z" fill="url(#socialProofBlueFill)"></path>
+
+              <!-- The Curve Line Itself -->
+              <path d="M0,60 Q600,0 1200,60" fill="none" stroke="url(#socialProofBlueStroke)" stroke-width="2" class="filter drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]"></path>
+          </svg>
+      </div>
+
+      <!-- Continuous Background Extension (Covers content below SVG) -->
+      <div class="absolute top-[59px] left-0 w-full h-full bg-slate-950 -z-10 pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-6 mb-20 text-center relative z-10">
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+          Radicalmente <span class="text-blue-400">sorprendentes</span>
+        </h2>
+        
+        <!-- Metrics Grid (Custom Layouts) -->
+        <div class="flex flex-col gap-12 mt-16 max-w-5xl mx-auto px-4">
+            
+            <!-- Card 1: Years of Experience (Left) -->
+            <div class="relative w-[90%] md:w-3/4 lg:w-4/5 rounded-[29px] p-[3px] bg-gradient-to-r from-blue-500 via-violet-500 to-blue-500 group self-start">
+              <div class="bg-slate-900 backdrop-blur-md rounded-[26px] p-6 py-8 md:p-16 md:py-32 min-h-[180px] md:min-h-[420px] h-full flex flex-row items-center justify-between gap-3 md:gap-12 relative overflow-hidden group-hover:bg-slate-800 transition-colors bg-cover">
+                 <!-- Glow Effect -->
+                 <div class="absolute inset-0 bg-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                 <!-- Number -->
+                 <div class="relative z-10 text-5xl sm:text-8xl md:text-9xl font-black text-white shrink-0 tracking-tighter order-1 font-comfortaa w-[40%] text-left -ml-4 md:-ml-8">
+                   +12
+                 </div>
+
+                 <!-- Label -->
+                 <div class="relative z-10 text-white font-bold text-sm sm:text-4xl md:text-4xl uppercase tracking-widest leading-tight text-left order-2 w-[60%]">
+                   AÑOS DE EXPERIENCIA
+                 </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Coverage (Right) - Text Heavy -->
+            <div class="relative w-[90%] md:w-3/4 lg:w-4/5 rounded-[29px] p-[3px] bg-gradient-to-r from-blue-500 via-violet-500 to-blue-500 group self-end">
+              <div class="bg-slate-900 backdrop-blur-md rounded-[26px] p-6 py-8 md:p-16 md:py-32 min-h-[180px] md:min-h-[420px] h-full flex flex-col items-center justify-between gap-3 md:gap-12 relative overflow-hidden group-hover:bg-slate-800 transition-colors bg-cover">
+                 <!-- Glow Effect -->
+                 <div class="absolute inset-0 bg-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                 <!-- Number/Main Text (Swapped Order for visual balance) -->
+                 <div class="relative z-10 text-2xl sm:text-5xl md:text-6xl font-black text-white shrink-0 tracking-tighter order-2 font-poppins max-w-lg text-center leading-tight">
+                   Toda la república mexicana
+                 </div>
+
+                 <!-- Label -->
+                 <div class="relative z-10 text-blue-200/80 font-medium text-sm sm:text-xl md:text-2xl uppercase tracking-widest flex-grow leading-tight text-center order-1">
+                   Trabajamos con notarias de
+                 </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Notaries Count (Left) -->
+            <div class="relative w-[90%] md:w-3/4 lg:w-4/5 rounded-[29px] p-[3px] bg-gradient-to-r from-blue-500 via-violet-500 to-blue-500 group self-start">
+              <div class="bg-slate-900 backdrop-blur-md rounded-[26px] p-6 py-8 md:p-16 md:py-32 min-h-[180px] md:min-h-[420px] h-full flex flex-col items-center justify-between gap-3 md:gap-12 relative overflow-hidden group-hover:bg-slate-800 transition-colors bg-cover">
+                 <!-- Glow Effect -->
+                 <div class="absolute inset-0 bg-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                 <!-- Number -->
+                 <div class="relative z-10 text-5xl sm:text-7xl md:text-8xl font-black text-white shrink-0 tracking-tighter order-1 font-comfortaa">
+                   +35 Notarias
+                 </div>
+
+                 <!-- Label -->
+                 <div class="relative z-10 text-blue-200/80 font-medium text-base sm:text-3xl md:text-2xl uppercase tracking-widest flex-grow leading-tight text-center order-2">
+                   han confiado en nosotros
+                 </div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+
+       <!-- Infinite Logo Wall -->
+       <div class="space-y-12 marquee-container mt-24 py-12 md:py-20 relative">
+         <!-- Gradient Fade Masks -->
+         <div class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-slate-950 to-transparent z-10"></div>
+         <div class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-slate-950 to-transparent z-10"></div>
+
+         <!-- Row 1: Left -->
+         <div class="flex gap-16 md:gap-32 w-max animate-scroll-left hover:[animation-play-state:paused] items-center">
+           @for (i of [1, 2, 3, 4]; track i) {
+             <div class="flex gap-16 md:gap-32 items-center">
+               @for (logo of logos(); track logo) {
+                 <img [src]="logo" alt="Partner Logo" class="h-24 md:h-40 w-auto object-contain opacity-40 hover:opacity-100 transition-opacity duration-300">
+               }
+             </div>
+           }
+         </div>
+
+         <!-- Row 2: Right -->
+         <div class="flex gap-16 md:gap-32 w-max animate-scroll-right hover:[animation-play-state:paused] items-center">
+           @for (i of [1, 2, 3, 4]; track i) {
+             <div class="flex gap-16 md:gap-32 items-center">
+                @for (logo of logos(); track logo) {
+                 <img [src]="logo" alt="Partner Logo" class="h-24 md:h-40 w-auto object-contain opacity-40 hover:opacity-100 transition-opacity duration-300">
+               }
+             </div>
+           }
+         </div>
+       </div>
+    </section>
+  `
+})
+export class SocialProofComponent {
+  metrics = signal([
+    { value: '+12', label: 'Años de experiencia' },
+    { value: 'Toda la republica mexicana', label: 'Trabajamos con notarias' },
+    { value: '+35 notarias', label: 'hemos trabajado con' }
+  ]);
+
+  logos = signal([
+    '/notaria_logo_1_1765317842475.png',
+    '/legal_firm_logo_1765317857692.png',
+    '/corporate_logo_1765317870921.png',
+    '/notaria_logo_2_1765317885857.png'
+  ]);
+}
