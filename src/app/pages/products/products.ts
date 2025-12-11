@@ -1,6 +1,7 @@
 import { Component, HostListener, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PRODUCT_CATALOG, ProductCategory } from '../../data/products.data';
+import { PRODUCT_CATALOG } from '../../data/products.data';
+import { CONTACT_INFO } from '../../data/contact.data';
 
 @Component({
   selector: 'app-products',
@@ -128,9 +129,8 @@ export class ProductsComponent {
   }
 
   getWhatsAppLink(productName: string): string {
-    const phone = '5215500000000'; // Placeholder - Update with real number
     const message = `Hola, me interesa cotizar: ${productName}`;
-    return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    return CONTACT_INFO.whatsapp.getLink(message);
   }
 
   @HostListener('window:scroll', [])

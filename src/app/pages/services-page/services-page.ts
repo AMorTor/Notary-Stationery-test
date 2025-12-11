@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SERVICES_CATALOG } from '../../data/services.data';
+import { CONTACT_INFO } from '../../data/contact.data';
 
 @Component({
-    selector: 'app-services-page',
-    standalone: true,
-    imports: [CommonModule],
-    template: `
+  selector: 'app-services-page',
+  standalone: true,
+  imports: [CommonModule],
+  template: `
     <div class="min-h-screen font-poppins text-white pb-32">
       
       <!-- HEADER -->
@@ -67,11 +68,10 @@ import { SERVICES_CATALOG } from '../../data/services.data';
   `
 })
 export class ServicesPageComponent {
-    services = SERVICES_CATALOG;
+  services = SERVICES_CATALOG;
 
-    getWhatsAppLink(serviceName: string): string {
-        const phone = '5215500000000'; // Placeholder
-        const message = `Hola, me gustaría recibir más información sobre sus servicios de: ${serviceName}`;
-        return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    }
+  getWhatsAppLink(serviceName: string): string {
+    const message = `Hola, me gustaría recibir más información sobre sus servicios de: ${serviceName}`;
+    return CONTACT_INFO.whatsapp.getLink(message);
+  }
 }
