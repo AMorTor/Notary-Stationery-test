@@ -76,12 +76,12 @@ body {
   background-color: #02040a;
   /* Deepest Blue/Black */
   background-image:
-    radial-gradient(at 0% 0%, rgba(49, 17, 78, 0.418) 0px, transparent 50%),
-    radial-gradient(at 50% 0%, rgba(255, 186, 57, 0.219) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, rgba(5, 0, 10, 0.521) 0px, transparent 50%),
+    radial-gradient(at 50% 0%, rgba(212, 175, 55, 0.315) 0px, transparent 50%),
     radial-gradient(at 100% 0%, rgba(75, 85, 99, 0.274) 0px, transparent 50%),
     radial-gradient(at 0% 100%, rgba(75, 85, 99, 0.1) 0px, transparent 50%),
     radial-gradient(at 100% 100%, rgba(62, 14, 107, 0.363) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(197, 159, 89, 0.295) 0px, transparent 50%);
+    radial-gradient(at 50% 100%, rgba(184, 135, 11, 0.295) 0px, transparent 50%);
   background-size: 200% 200%;
   animation: lava-flow 15s ease infinite alternate;
 
