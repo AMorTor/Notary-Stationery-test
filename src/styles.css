@@ -3,18 +3,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Comfortaa:wght@300;400;700&display=swap');
 @import "tailwindcss";
 
-@theme {
-  --font-poppins: 'Poppins', sans-serif;
-  --font-comfortaa: 'Comfortaa', cursive;
+@font-face {
+  font-family: 'Blacksword';
+  src: url('/fonts/Blacksword.otf') format('opentype');
+  font-display: swap;
 }
 
 @theme {
-  /* Dark Luxury Palette */
-  --color-slate-950: #020617;
-  --color-violet-950: #2e1065;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-comfortaa: 'Comfortaa', cursive;
+  --font-blacksword: 'Blacksword', cursive;
+}
+
+@theme {
+  /* Deep Luxury Black & Gold Palette */
+  --color-slate-950: #050505;
+  /* Deep Black */
+  --color-violet-950: #0a0a0a;
+  /* Soft Black (replacing violet background roles) */
   --color-gold-400: #fbbf24;
   --color-gold-500: #f59e0b;
   --color-gold-600: #d97706;
+  --color-gold-100: #fef3c7;
+  --color-neutral-900: #171717;
 
   /* Material 3 Radius */
   --radius-xl: 28px;
@@ -62,7 +73,10 @@
 /* Global Styles */
 body {
   background-color: var(--color-slate-950);
-  background-image: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #020617 60%);
+  background-image:
+    radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 0%, #171717 0%, #050505 70%);
   color: white;
   font-family: 'Poppins', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;

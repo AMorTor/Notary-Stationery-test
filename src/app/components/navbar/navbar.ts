@@ -62,7 +62,7 @@ import { RouterLink } from '@angular/router';
                 <a 
                     [routerLink]="item.path" 
                     (click)="handleNavigation()" 
-                    class="text-3xl md:text-5xl font-light text-white hover:text-blue-400 transition-colors tracking-widest uppercase hover:scale-105 transform duration-300 cursor-pointer"
+                    class="text-3xl md:text-5xl font-light text-white hover:text-gold-400 transition-colors tracking-widest uppercase hover:scale-105 transform duration-300 cursor-pointer"
                 >
                     {{ item.label }}
                 </a>
