@@ -84,6 +84,7 @@ body {
     radial-gradient(at 50% 100%, rgba(184, 135, 11, 0.295) 0px, transparent 50%);
   background-size: 200% 200%;
   animation: lava-flow 15s ease infinite alternate;
+  will-change: background-position;
 
   color: white;
   font-family: 'Poppins', system-ui, -apple-system, sans-serif;
@@ -94,17 +95,14 @@ body {
 @keyframes lava-flow {
   0% {
     background-position: 0% 50%;
-    background-size: 150% 150%;
   }
 
   50% {
     background-position: 100% 50%;
-    background-size: 175% 175%;
   }
 
   100% {
     background-position: 0% 50%;
-    background-size: 150% 150%;
   }
 }
 

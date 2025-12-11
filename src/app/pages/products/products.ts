@@ -58,7 +58,7 @@ import { CONTACT_INFO } from '../../data/contact.data';
                    <!-- Image Section -->
                    <div class="relative h-48 w-full overflow-hidden bg-neutral-900">
                       @if (item.image) {
-                        <img [src]="item.image" [alt]="item.name" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                        <img [src]="item.image" [alt]="item.name" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                       } @else {
                         <div class="w-full h-full flex items-center justify-center text-neutral-700">
                           <svg class="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">

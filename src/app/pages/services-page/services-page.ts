@@ -31,7 +31,7 @@ import { CONTACT_INFO } from '../../data/contact.data';
 
                <!-- Image Header -->
                <div class="relative h-64 overflow-hidden bg-neutral-900">
-                  <img [src]="service.image" [alt]="service.title" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000">
+                  <img [src]="service.image" [alt]="service.title" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000">
                   <div class="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent"></div>
                   
                   <!-- Title Overlay -->
