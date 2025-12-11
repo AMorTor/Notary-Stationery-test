@@ -92,7 +92,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.intervalId = setInterval(() => {
       this.cyclePhrase();
-    }, 4500); // 3.5s visible + 1s transition logic
+    }, 3000);
   }
 
   ngOnDestroy() {

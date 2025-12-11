@@ -7,41 +7,13 @@ import { RouterLink } from '@angular/router';
   imports: [RouterLink],
   template: `
   <section class="py-24 relative overflow-hidden -mt-24 z-20">
-    <!-- Curved Glowing Header (Gold) -->
-      <div class="absolute top-0 left-0 w-full h-[400px] leading-[0] z-0 pointer-events-none">
-        <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" preserveAspectRatio="none">
-          <defs>
-          <!-- Gold Glow Gradient -->
-            <linearGradient id="servicesGoldFill" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="rgba(245, 158, 11, 0.15)" />
-              <stop offset="50%" stop-color="rgba(245, 158, 11, 0.05)" />
-              <stop offset="100%" stop-color="transparent" />
-            </linearGradient>
-            <!-- Horizon Stroke Gradient -->
-            <linearGradient id="servicesGoldStroke" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="transparent" />
-              <stop offset="20%" stop-color="rgba(245, 158, 11, 0.4)" />
-              <stop offset="50%" stop-color="rgba(245, 158, 11, 0.8)" />
-              <stop offset="80%" stop-color="rgba(245, 158, 11, 0.4)" />
-              <stop offset="100%" stop-color="transparent" />
-            </linearGradient>
-          </defs>
-
-          <!-- Filled Glow Area (Convex Hill) -->
-          <path d="M0,60 Q600,0 1200,60 V400 H0 Z" fill="#050505"></path>
-          <path d="M0,60 Q600,0 1200,60 V400 H0 Z" fill="url(#servicesGoldFill)"></path>
-
-          <!-- The Curve Line Itself -->
-          <path d="M0,60 Q600,0 1200,60" fill="none" stroke="url(#servicesGoldStroke)" stroke-width="2" class="filter drop-shadow-[0_0_15px_rgba(245,158,11,0.3)]"></path>
-        </svg>
-      </div>
 
       <!-- Continuous Background Extension -->
-      <div class="absolute top-[59px] left-0 w-full h-full bg-slate-950 -z-10 pointer-events-none"></div>
+      <div class="absolute top-[59px] left-0 w-full h-full  -z-10 pointer-events-none"></div>
 
       <div class="max-w-7xl mx-auto relative z-10 px-6">
-        <h2 class="text-3xl md:text-5xl font-bold text-white mb-16 text-left">
-          Soluciones <span class="text-gold-400">Exclusivas</span>
+        <h2 class="text-3xl md:text-5xl font-light text-white mb-16 text-left">
+          Nuestros <span class="text-gold-400 font-bold">Productos y Servicios</span>
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">

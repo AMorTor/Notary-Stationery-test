@@ -5,36 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   template: `
     <section class="py-24 relative overflow-hidden px-6 min-h-[600px] flex items-center">
-      <!-- Curved Glowing Header (Amber) -->
-      <div class="absolute top-0 left-0 w-full h-full md:h-[500px] leading-0 z-0 pointer-events-none opacity-60">
-          <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" preserveAspectRatio="none">
-              <defs>
-                  <!-- Amber Glow Gradient -->
-                  <linearGradient id="contactAmberFill" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stop-color="rgba(245, 158, 11, 0.2)" />
-                      <stop offset="50%" stop-color="rgba(245, 158, 11, 0.05)" />
-                      <stop offset="100%" stop-color="transparent" />
-                  </linearGradient>
-                  <!-- Horizon Stroke Gradient -->
-                  <linearGradient id="contactAmberStroke" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stop-color="transparent" />
-                      <stop offset="20%" stop-color="rgba(245, 158, 11, 0.6)" />
-                      <stop offset="50%" stop-color="rgba(245, 158, 11, 1)" />
-                      <stop offset="80%" stop-color="rgba(245, 158, 11, 0.6)" />
-                      <stop offset="100%" stop-color="transparent" />
-                  </linearGradient>
-              </defs>
-              
-              <!-- Filled Glow Area -->
-              <path d="M0,60 Q600,0 1200,60 V400 H0 Z" fill="url(#contactAmberFill)"></path>
 
-              <!-- The Curve Line Itself -->
-              <path d="M0,60 Q600,0 1200,60" fill="none" stroke="url(#contactAmberStroke)" stroke-width="2" class="drop-shadow-[0_0_15px_rgba(245,158,11,0.3)]"></path>
-          </svg>
-      </div>
-
-      <!-- Extra Glow effect -->
-      <div class="absolute bottom-0 right-0 w-96 h-96 bg-amber-600/10 blur-3xl rounded-full"></div>
 
       <div class="max-w-4xl mx-auto w-full relative z-10 text-center">
         

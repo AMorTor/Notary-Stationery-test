@@ -16,8 +16,10 @@ import { Component, signal, OnDestroy, OnInit } from '@angular/core';
       }
 
       <!-- Overlay (Deep Black & Gold Vignette) -->
-      <div class="absolute inset-0 bg-black/60 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-neutral-900/40 to-transparent mix-blend-overlay"></div>
+      <div class="absolute inset-0 bg-black/60 bg-linear-to-t from-slate-950 via-slate-950/50 to-transparent"></div>
+
+      <!-- Strong Bottom Fade -->
+      <div class="absolute bottom-0 left-0 w-full h-48 bg-linear-to-t from-black via-black/80 to-transparent z-10 pointer-events-none"></div>
 
       <!-- Content -->
       <div class="relative z-10 h-screen flex flex-col justify-center items-start px-6 max-w-7xl mx-auto space-y-8">
@@ -27,12 +29,12 @@ import { Component, signal, OnDestroy, OnInit } from '@angular/core';
 
         <!-- Text Group -->
         <div class="space-y-2 animate-fade-in-up delay-100">
-          <h2 class="text-2xl md:text-4xl text-gold-100 font-light tracking-[0.2em] uppercase border-l-4 border-gold-500 pl-6">
+          <h2 class="text-2xl md:text-4xl text-gold-100 font-light tracking-[0.2em] uppercase ">
             Somos A&G
           </h2>
           <h1 class="text-4xl md:text-6xl lg:text-7xl font-semibold text-white leading-tight tracking-tight">
             Papelería Notarial <br />
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 via-gold-200 to-gold-400">
+            <span class="text-transparent bg-clip-text bg-linear-to-r from-amber-600 via-gold-200 to-gold-400">
               & Corporativa
             </span>
           </h1>

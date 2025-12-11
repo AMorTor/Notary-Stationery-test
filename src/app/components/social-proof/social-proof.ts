@@ -4,40 +4,8 @@ import { Component, signal } from '@angular/core';
   selector: 'app-social-proof',
   standalone: true,
   template: `
-    <section class="py-24 relative overflow-hidden -mt-24 z-20">
-      <!-- Curved Glowing Header (Gold) -->
-      <div class="absolute top-0 left-0 w-full h-[400px] leading-[0] z-0 pointer-events-none">
-          <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" preserveAspectRatio="none">
-              <defs>
-                  <!-- Gold Glow Gradient -->
-                  <linearGradient id="socialProofGoldFill" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stop-color="rgba(245, 158, 11, 0.4)" />
-                      <stop offset="50%" stop-color="rgba(245, 158, 11, 0.1)" />
-                      <stop offset="100%" stop-color="transparent" />
-                  </linearGradient>
-                  <!-- Horizon Stroke Gradient -->
-                  <linearGradient id="socialProofGoldStroke" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stop-color="transparent" />
-                      <stop offset="20%" stop-color="rgba(245, 158, 11, 0.6)" />
-                      <stop offset="50%" stop-color="rgba(245, 158, 11, 1)" />
-                      <stop offset="80%" stop-color="rgba(245, 158, 11, 0.6)" />
-                      <stop offset="100%" stop-color="transparent" />
-                  </linearGradient>
-              </defs>
-              
-              <!-- Filled Glow Area (Convex Hill) -->
-              <!-- Solid Base to mask Hero straight line -->
-              <path d="M0,60 Q600,0 1200,60 V400 H0 Z" fill="#050505"></path>
-              <!-- Gradient Overlay -->
-              <path d="M0,60 Q600,0 1200,60 V400 H0 Z" fill="url(#socialProofGoldFill)"></path>
+    <section class="py-24 relative overflow-hidden">
 
-              <!-- The Curve Line Itself -->
-              <path d="M0,60 Q600,0 1200,60" fill="none" stroke="url(#socialProofGoldStroke)" stroke-width="2" class="filter drop-shadow-[0_0_15px_rgba(245,158,11,0.5)]"></path>
-          </svg>
-      </div>
-
-      <!-- Continuous Background Extension (Covers content below SVG) -->
-      <div class="absolute top-[59px] left-0 w-full h-full bg-slate-950 -z-10 pointer-events-none"></div>
 
       <div class="max-w-7xl mx-auto px-6 mb-20 text-center relative z-10">
         <h2 class="text-3xl sm:text-3xl pb-2 md:text-6xl text-gold-400 mb-2 font-blacksword tracking-wide">
