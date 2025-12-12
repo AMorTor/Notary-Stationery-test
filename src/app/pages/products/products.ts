@@ -21,7 +21,7 @@ import { CONTACT_INFO } from '../../data/contact.data';
       </section>
 
       <!-- STICKY NAVIGATION (Tabs) -->
-      <div class="sticky top-28 z-40 bg-black/80 backdrop-blur-md border-y border-white/5 py-4 mb-20 overflow-x-auto">
+      <div class="sticky top-28 z-40 bg-black/80 backdrop-blur-md border-y border-white/5 py-5 mb-20 overflow-x-auto ">
         <div class="flex justify-center min-w-max px-6 gap-8 md:gap-12">
            @for (cat of catalog; track cat.id) {
              <button 
