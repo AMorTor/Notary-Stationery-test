@@ -1,0 +1,27 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy static content to Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+
+jobs:
+  build-angular:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v6.0.1
+      
+      - name: Setup nodeJS
+        uses: actions/setup-node@v6.1.0
+        with: 
+          node-version: 22.12
+
+      - name: Install dependencies 
+        run: npm install 
+
+      - name: Build 
+        run: npm run build 
+    
