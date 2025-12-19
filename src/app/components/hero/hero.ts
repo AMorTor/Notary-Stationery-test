@@ -1,8 +1,12 @@
-import { Component, signal, OnDestroy, OnInit } from '@angular/core';
+import { Component, signal, OnDestroy, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule, ScrollRevealDirective],
   template: `
     <section class="relative min-h-screen w-full overflow-hidden">
       <!-- Background Carousel -->
@@ -25,10 +29,10 @@ import { Component, signal, OnDestroy, OnInit } from '@angular/core';
       <div class="relative z-10 h-screen flex flex-col justify-center items-start px-6 max-w-7xl mx-auto space-y-8">
         
         <!-- Logo -->
-        <img src="ayg-logo.png" alt="A&G Logo" class="w-48 md:w-80 h-auto object-contain animate-fade-in-up drop-shadow-[0_0_15px_rgba(245,158,11,0.2)]">
+        <img appScrollReveal src="ayg-logo.png" alt="A&G Logo" class="w-48 md:w-80 h-auto object-contain animate-fade-in-up drop-shadow-[0_0_15px_rgba(245,158,11,0.2)]">
 
         <!-- Text Group -->
-        <div class="space-y-2 animate-fade-in-up delay-100">
+        <div appScrollReveal class="space-y-2 animate-fade-in-up delay-100">
           <h2 class="text-2xl md:text-4xl text-gold-100 font-light tracking-[0.2em] uppercase ">
             Somos A&G
           </h2>
@@ -36,8 +40,13 @@ import { Component, signal, OnDestroy, OnInit } from '@angular/core';
             Papelería Notarial <br />
             <span class="text-transparent bg-clip-text bg-linear-to-r from-amber-600 via-gold-200 to-gold-400">
               & Corporativa
-            </span>
-          </h1>
+          </span>
+        </h1>
+        
+        <p class="text-slate-300 text-lg md:text-xl max-w-2xl leading-relaxed mt-8 font-light">
+          <span class="block italic mb-2 text-gold-200">No importa la razón por la que usted esté aquí…</span>
+          Si busca impacto, calidad, innovación o simplemente salir de un apuro, llegó al lugar correcto.
+        </p>
         </div>
 
       </div>
@@ -45,11 +54,17 @@ import { Component, signal, OnDestroy, OnInit } from '@angular/core';
   `
 })
 export class HeroComponent implements OnInit, OnDestroy {
-  images = signal([
-    'https://images.unsplash.com/photo-1564189218077-da13d6c81f25?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Signing/Pen
-    'https://images.unsplash.com/photo-1736323177862-bf485468344f?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Stationery Layout
-    'https://images.unsplash.com/photo-1678435630712-6eb56e21d8cc?q=80&w=778&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'  // Deep Abstract Paper
-  ]);
+  // Configuration
+  private readonly imageCount = 25;
+  private readonly imagePath = '/photos/ayg-items'; // Base path + prefix
+
+  // Auto-generate array: ['/photos/ayg-items01.jpg', '/photos/ayg-items02.jpg', ..., '/photos/ayg-items25.jpg']
+  images = signal(
+    Array.from({ length: this.imageCount }, (_, i) => {
+      const num = (i + 1).toString().padStart(2, '0');
+      return `${this.imagePath}${num}.jpg`;
+    })
+  );
 
   currentIndex = signal(0);
   private intervalId: any;

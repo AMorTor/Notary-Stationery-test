@@ -9,7 +9,7 @@ import { CONTACT_INFO } from '../../data/contact.data';
   template: `
     <footer class="bg-black border-t border-white/5 py-20 relative overflow-hidden">
       <!-- Background Glow (Gold) -->
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-64 bg-gold-400/5 blur-[120px] rounded-full pointer-events-none"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-64 bg-gold-400/10 blur-[120px] rounded-full pointer-events-none"></div>
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
         

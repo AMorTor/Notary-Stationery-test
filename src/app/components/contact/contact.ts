@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { CONTACT_INFO } from '../../data/contact.data';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule, ScrollRevealDirective],
   template: `
     <section class="py-24 relative overflow-hidden px-6 min-h-[600px] flex items-center">
 
@@ -11,18 +15,19 @@ import { CONTACT_INFO } from '../../data/contact.data';
       <div class="max-w-4xl mx-auto w-full relative z-10 text-center">
         
         <!-- Header Content -->
-        <div class="mb-12 space-y-4">
-          <h2 class="text-4xl md:text-6xl font-light text-white leading-tight">
-            Elevemos su <br class="md:hidden" />
-            <span class="text-amber-400 font-bold">Imagen Corporativa</span>
+        <div class="mb-12 space-y-6 text-left" appScrollReveal>
+          <h2 class=" text-white leading-tight">
+           <span class="text-xl md:text-4xl font-light">Somos una empresa de garantía</span>
+           <br class="hidden md:block" />
+            <span class="text-amber-400 text-4xl md:text-6xl font-bold  italic"> Descubrenos</span>
           </h2>
-          <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto">
+          <p class="text-slate-400 text-sm md:text-xl max-w-xl ">
              La distinción comienza con el primer contacto. Solicite una cotización personalizada o asesoría directa.
           </p>
         </div>
 
         <!-- Buttons Grid -->
-        <div class="flex flex-col gap-4 w-full max-w-lg mx-auto">
+        <div class="flex flex-col gap-4 w-full max-w-full mx-auto" appScrollReveal>
             <!-- WhatsApp -->
             <a [href]="contact.whatsapp.getLink('Hola, me gustaría más información sobre sus servicios')" target="_blank" class="group relative overflow-hidden rounded-full h-16 bg-green-600 transition-all hover:bg-green-700 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(22,163,74,0.4)] flex items-center justify-center gap-3">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-white">

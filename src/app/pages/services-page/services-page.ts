@@ -13,7 +13,7 @@ import { CONTACT_INFO } from '../../data/contact.data';
       <!-- HEADER -->
       <section class="relative pt-40 pb-20 px-6 text-center">
         <h1 class="text-4xl md:text-7xl font-light text-white mb-6 tracking-tight">
-          Soluciones <span class="text-gold-400 font-blacksword">Digitales & Físicas</span>
+          Soluciones <span class="text-gold-400 font-bold">Digitales & Físicas</span>
         </h1>
         <p class="text-neutral-400 text-lg max-w-2xl mx-auto font-light">
           Innovación tecnológica y artesanía tradicional para potenciar su notaría.

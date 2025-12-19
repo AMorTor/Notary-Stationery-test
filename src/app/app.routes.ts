@@ -4,6 +4,7 @@ import { ProductsComponent } from './pages/products/products';
 import { ServicesPageComponent } from './pages/services-page/services-page';
 import { ContactPageComponent } from './pages/contact-page/contact-page';
 import { AboutUsComponent } from './pages/about-us/about-us';
+import { LoyaltyPageComponent } from './pages/loyalty/loyalty';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -11,5 +12,6 @@ export const routes: Routes = [
     { path: 'servicios', component: ServicesPageComponent },
     { path: 'contacto', component: ContactPageComponent },
     { path: 'nosotros', component: AboutUsComponent },
+    { path: 'lealtad', component: LoyaltyPageComponent },
     { path: '**', redirectTo: '' }
 ];

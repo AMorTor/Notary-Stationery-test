@@ -9,38 +9,37 @@ import { Component } from '@angular/core';
         
         <!-- Header -->
         <div class="text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">Sobre <span class="text-gold-400">Nosotros</span></h1>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">¿En qué creemos?</h1>
             <p class="text-xl text-slate-400">
                 Más que una papelería, somos aliados estratégicos del gremio notarial.
             </p>
         </div>
 
-        <!-- Mission -->
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <h2 class="text-3xl font-bold text-gold-400 mb-4">Misión</h2>
-                <p class="text-slate-300 leading-relaxed">
-                    Proveer soluciones de papelería e imagen corporativa de la más alta calidad y seguridad, 
-                    facilitando la labor diaria de notarios y abogados con productos que reflejan la seriedad 
-                    y prestigio de su profesión.
+        <!-- Beliefs (Replaces Mission/Vision) -->
+        <div class="relative bg-neutral-900/50 rounded-3xl p-8 md:p-12 border border-white/5 overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-gold-500/10 rounded-full blur-[100px] -mr-32 -mt-32"></div>
+        
+            
+            <div class="space-y-12 text-center max-w-4xl mx-auto relative z-10">
+                <p class="text-2xl md:text-3xl text-gold-100 font-serif italic opacity-90 leading-relaxed">
+                    Creemos que la imagen juega un papel vital
                 </p>
-            </div>
-            <div class="h-64 bg-neutral-900 rounded-xl border border-white/5 flex items-center justify-center text-gold-500/50">
-                [Icono Misión]
-            </div>
-        </div>
+                
+                <div class="w-24 h-px bg-linear-to-r from-transparent via-gold-500 to-transparent mx-auto opacity-50"></div>
 
-        <!-- Vision -->
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-             <div class="h-64 bg-neutral-900 rounded-xl border border-white/5 flex items-center justify-center text-gold-500/50 order-2 md:order-1">
-                [Icono Visión]
-            </div>
-            <div class="order-1 md:order-2">
-                <h2 class="text-3xl font-bold text-gold-400 mb-4">Visión</h2>
-                <p class="text-slate-300 leading-relaxed">
-                    Ser el referente nacional indiscutible en suministro notarial, reconocidos por nuestra 
-                    innovación en seguridad documental y nuestra atención personalizada de clase mundial.
-                </p>
+                <div class="relative py-8">
+                     <span class="absolute top-0 left-0 text-6xl text-gold-500/20 font-comfortaa">“</span>
+                     <p class="text-2xl md:text-4xl text-white/60 font-medium leading-tight tracking-tight relative z-10">
+                        A&G existe para que ninguna notaría ni corporativo tenga que conformarse con insumos que no estén a la altura de la responsabilidad que asumen a diario.
+                     </p>
+                     <span class="absolute bottom-0 right-0 text-6xl text-gold-500/20 font-comfortaa leading-none">”</span>
+                </div>
+
+                <div class="bg-white/5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm">
+                    <p class="text-slate-300 leading-relaxed text-lg md:text-xl font-light">
+                        Nuestro trabajo es simple: <span class="text-gold-400 font-medium">convertir cada pedido en una inversión estratégica</span> en imagen, confianza y posicionamiento. Por eso apostamos por innovación, procesos serios y relaciones de largo plazo con cada cliente.
+                    </p>
+                </div>
             </div>
         </div>
 

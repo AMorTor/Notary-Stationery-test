@@ -1,19 +1,22 @@
-import { Component, HostListener, signal } from '@angular/core';
+import { Component, signal, AfterViewInit, OnDestroy, ElementRef, ViewChildren, QueryList, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 import { PRODUCT_CATALOG } from '../../data/products.data';
 import { CONTACT_INFO } from '../../data/contact.data';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule, ScrollRevealDirective],
   template: `
     <div class="min-h-screen font-poppins text-white pb-32">
       
       <!-- HEADER MINIMALISTA -->
       <section class="relative pt-40 pb-20 px-6 text-center">
         <h1 class="text-4xl md:text-7xl font-light text-white mb-6 tracking-tight">
-          Catálogo <span class="text-gold-400 font-blacksword">Esencial</span>
+          Catálogo <span class="text-gold-400 font-bold">Esencial</span>
         </h1>
         <p class="text-neutral-400 text-lg max-w-2xl mx-auto font-light">
           Colecciones diseñadas para elevar la identidad de su firma.
@@ -40,7 +43,7 @@ import { CONTACT_INFO } from '../../data/contact.data';
       <!-- SECTIONS -->
       <div class="max-w-7xl mx-auto px-6 space-y-32">
         @for (cat of catalog; track cat.id) {
-          <section [id]="cat.id" class="scroll-mt-48 transition-opacity duration-700">
+          <section #categorySection [id]="cat.id" class="scroll-mt-48 transition-opacity duration-700" appScrollReveal>
             
             <!-- Category Header -->
             <div class="mb-12 border-l-2 border-gold-500 pl-6">
@@ -133,18 +136,53 @@ export class ProductsComponent {
     return CONTACT_INFO.whatsapp.getLink(message);
   }
 
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    // Simple ScrollSpy Logic
-    for (const cat of this.catalog) {
-      const element = document.getElementById(cat.id);
-      if (element) {
-        const rect = element.getBoundingClientRect();
-        if (rect.top >= 0 && rect.top < 300) {
-          this.activeCategory.set(cat.id);
-          break;
-        }
-      }
+  @ViewChildren('categorySection') categorySections!: QueryList<ElementRef>;
+  private observer: IntersectionObserver | null = null;
+
+  constructor() { }
+
+  ngAfterViewInit() {
+    this.setupIntersectionObserver();
+  }
+
+  ngOnDestroy() {
+    if (this.observer) {
+      this.observer.disconnect();
     }
+  }
+
+  private setupIntersectionObserver() {
+    const options = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px', // Trigger when section is near top
+      threshold: 0
+    };
+
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          if (id) {
+            this.activeCategory.set(id);
+          }
+        }
+      });
+    }, options);
+
+    // Observe all catalog sections
+    this.categorySections.changes.subscribe(() => {
+      this.observeSections();
+    });
+
+    // Initial observation
+    this.observeSections();
+  }
+
+  private observeSections() {
+    if (!this.observer) return;
+
+    this.categorySections.forEach(section => {
+      this.observer!.observe(section.nativeElement);
+    });
   }
 }
