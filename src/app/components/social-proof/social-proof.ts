@@ -31,7 +31,7 @@ import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive'
          <div class="relative w-full h-auto aspect-square md:h-screen md:aspect-auto rounded-[30px] md:rounded-[50px] overflow-hidden shadow-2xl md:shadow-none border border-white/10 md:border-none will-change-transform">
             <video 
               #videoPlayer
-              src="/records/proceso-artesanal.mp4" 
+              src="records/proceso-artesanal.mp4" 
               autoplay
               muted
               loop
@@ -116,10 +116,10 @@ export class SocialProofComponent implements AfterViewInit {
   @ViewChild('videoPlayer') videoPlayer!: ElementRef<HTMLVideoElement>;
 
   logos = signal([
-    '/notaria_logo_1_1765317842475.png',
-    '/legal_firm_logo_1765317857692.png',
-    '/corporate_logo_1765317870921.png',
-    '/notaria_logo_2_1765317885857.png'
+    'notaria_logo_1_1765317842475.png',
+    'legal_firm_logo_1765317857692.png',
+    'corporate_logo_1765317870921.png',
+    'notaria_logo_2_1765317885857.png'
   ]);
 
   ngAfterViewInit() {

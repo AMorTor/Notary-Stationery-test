@@ -56,7 +56,7 @@ import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive'
 export class HeroComponent implements OnInit, OnDestroy {
   // Configuration
   private readonly imageCount = 25;
-  private readonly imagePath = '/photos/ayg-items'; // Base path + prefix
+  private readonly imagePath = 'photos/ayg-items'; // Base path + prefix
 
   // Auto-generate array: ['/photos/ayg-items01.jpg', '/photos/ayg-items02.jpg', ..., '/photos/ayg-items25.jpg']
   images = signal(
